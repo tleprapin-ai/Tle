@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>สุขสันต์วันปัจฉิม</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{
+    margin:0;
+    height:100vh;
+    background: radial-gradient(circle, #ffffff 0%, #ffd1e3 60%, #f9c6d8 100%);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:"Segoe UI", sans-serif;
+}
+
+.card{
+    background:#fff;
+    border-radius:25px;
+    padding:40px 30px;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(0,0,0,0.15);
+    width:320px;
+}
+
+.gift{
+    width:200px;
+    height:200px;
+    margin:auto;
+    background:linear-gradient(145deg,#ffd1e3,#f7a9c4);
+    border-radius:20px;
+    position:relative;
+    cursor:pointer;
+    box-shadow:inset 0 0 0 8px #ffc1d8;
+}
+
+.ribbon{
+    position:absolute;
+    background:#ff87b2;
+}
+.ribbon.vertical{
+    width:30px;
+    height:100%;
+    left:50%;
+    transform:translateX(-50%);
+}
+.ribbon.horizontal{
+    height:30px;
+    width:100%;
+    top:50%;
+    transform:translateY(-50%);
+}
+.bow{
+    position:absolute;
+    top:-25px;
+    left:50%;
+    transform:translateX(-50%);
+    font-size:40px;
+}
+
+button{
+    margin-top:25px;
+    padding:12px 35px;
+    border:none;
+    border-radius:30px;
+    background:linear-gradient(145deg,#ff7eb3,#ff4f8b);
+    color:#fff;
+    font-size:16px;
+    cursor:pointer;
+}
+
+/* popup background */
+.popup-bg{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.45);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:10;
+}
+
+/* 🔥 popup 70% ของหน้าเว็บ */
+.popup{
+    width:70vw;
+    height:70vh;
+    background:#fff0f6;
+    border-radius:30px;
+    padding:30px;
+    text-align:center;
+    animation:pop 0.4s ease;
+    overflow:auto;
+}
+
+@keyframes pop{
+    from{transform:scale(0.7);opacity:0;}
+    to{transform:scale(1);opacity:1;}
+}
+
+/* bouquet */
+.bouquet{
+    width:260px;
+    margin:0 auto 20px;
+}
+.bouquet img{
+    width:100%;
+    border-radius:25px;
+}
+
+.popup h2{
+    color:#d6336c;
+    margin:15px 0;
+    font-size:26px;
+}
+
+.popup p{
+    color:#555;
+    font-size:18px;
+    line-height:1.8;
+}
+
+.close{
+    margin-top:25px;
+    padding:12px 40px;
+    border:none;
+    border-radius:30px;
+    background:#ff4f8b;
+    color:#fff;
+    font-size:16px;
+    cursor:pointer;
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+    <div class="gift" onclick="openGift()">
+        <div class="bow">🎀</div>
+        <div class="ribbon vertical"></div>
+        <div class="ribbon horizontal"></div>
+    </div>
+    <button onclick="openGift()">รับของขวัญ</button>
+</div>
+
+<div class="popup-bg" id="popup">
+    <div class="popup">
+
+        <div class="bouquet">
+            <img src="/Users/tle/Downloads/pngtree-red-rose-pink-bow-beautiful-bouquet-green-leaves-png-image_3868823-removebg-preview.png" alt="ช่อดอกไม้">
+        </div>
+
+        <h2>🎓 สุขสันต์วันปัจฉิม</h2>
+        <p>
+            ขอให้ทุกความพยายามที่ผ่านมาผลิบาน  
+            เหมือนช่อดอกไม้ช่อนี้  
+            และนำพาไปสู่อนาคตที่สดใส 🌸💖
+        </p>
+
+        <button class="close" onclick="closePopup()">ขอบคุณ</button>
+    </div>
+</div>
+
+<script>
+function openGift(){
+    document.getElementById("popup").style.display="flex";
+}
+function closePopup(){
+    document.getElementById("popup").style.display="none";
+}
+</script>
+
+</body>
+</html>
